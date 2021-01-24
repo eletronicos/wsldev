@@ -1,2 +1,2 @@
 
-int getMax(int arr[], int n; 
+int getMax(int arr[], int n); 

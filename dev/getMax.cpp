@@ -1,4 +1,3 @@
-# include "getMax.h"
 
 int getMax(int arr[], int n){
 	
