@@ -1,42 +1,49 @@
 # include <iostream>
-# include <string.h>
+# include <string>
 
 using namespace std;
 
 class Student
 {
 	private:
-		string name;
+		char name[30];
 		int age;
-		string number;
-		int scores_1, scores_2, scores_3, scores_4;
+		char number[30];
+		int scores1, scores2, scores3, scores4;  
+		int averageScores;
+	
 	public:
-		void func()
-		{
-			string name, number;
-			int age, scores_1, scores_2, scores_3, scores_4;
-			int average_scores;	
-
-			string data;
-			cin >> data;
-			string[] output = data.split(",");
-			name = output[0];
-			age = output[1];
-			number = output[2];
-			scores_1 = output[3];
-			scores_2 = output[4];
-			scores_3 = output[5];
-			scores_4 = output[6];
-			
-
-			average_scores = (scores_1 + scores_2 + scores_3 + scores_4) / 4;
-			cout << name << "," << age << "," << number << "," << average_scores;
-		}
+		void get();
+		void print();
+		void average();
 };
+
+void Student::get()
+{
+	char tmpchar;
+	cin.getline(name, 30, ',');
+	cin >> age >> tmpchar;
+	cin.getline(number, 30, ',');
+	cin >> scores1 >> tmpchar >> scores2 >> tmpchar >> scores3 >> tmpchar >> scores4;
+
+}
+
+
+void Student::print()
+{
+	cout << name << "," << age << "," << number << "," << averageScores << endl;
+}
+
+void Student::average()
+{
+	averageScores = (scores1 + scores2 + scores3 + scores4) / 4;
+}
 
 int main()
 {
 	Student stu;
-	stu.func();
+	stu.get();
+	stu.average();
+	stu.print();
+	return 0;
 }
-	
