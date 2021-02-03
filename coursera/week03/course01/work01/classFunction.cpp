@@ -27,5 +27,5 @@ inline void Animal::spark(string voice)
 int main()
 {
     Animal doggy;
-    doggy.spark("catalina");
+    doggy.spark("Hi, Siri!");
 }
